@@ -1,5 +1,5 @@
 const pool = require('../modules/pool');
-const table = 'BannerTable';
+const table = 'Banner';
 
 const banner = {
     // 포스트 리스트 불러오기
