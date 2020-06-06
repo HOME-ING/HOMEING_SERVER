@@ -12,6 +12,11 @@
 
 <br>
 
+
+### EC2 - RDS
+
+![EC2-RDS](./img/EC2.PNG)
+
 ### User Table 
 
 
