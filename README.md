@@ -40,7 +40,7 @@
 ### ChallengeImg Table
 
 
-|challengeIdx(PK)|challengeUrl|
+|challengeIdx|challengeUrl|
 |------|---|
 |1|[https://res.heraldm.com/phpwas/restmb_idxmake.php?idx=507&simg=/content/image/2020/04/14/20200414000131_0.jpg](https://res.heraldm.com/phpwas/restmb_idxmake.php?idx=507&simg=/content/image/2020/04/14/20200414000131_0.jpg)| 
 |2|[https://i.ytimg.com/vi/J_jkcg7RP88/hqdefault.jpg](https://i.ytimg.com/vi/J_jkcg7RP88/hqdefault.jpg)|
