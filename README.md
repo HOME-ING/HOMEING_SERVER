@@ -20,7 +20,7 @@
 ### Hotming Table
 
 |hotmingUrl(PK)|
-|------|---|---|
+|------|
 |[https://i.ytimg.com/vi/t7rH32pi2XA/maxresdefault.jpg](https://i.ytimg.com/vi/t7rH32pi2XA/maxresdefault.jpg)|
 |[https://i.ytimg.com/vi/2l1Mt0lmt7U/maxresdefault.jpg](https://i.ytimg.com/vi/2l1Mt0lmt7U/maxresdefault.jpg)|
 |[https://s3-ap-northeast-2.amazonaws.com/mobiinsidecontent/kr/wp-content/uploads/2020/03/17142707/1.jpg](https://s3-ap-northeast-2.amazonaws.com/mobiinsidecontent/kr/wp-content/uploads/2020/03/17142707/1.jpg)|
