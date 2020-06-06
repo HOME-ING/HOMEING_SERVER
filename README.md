@@ -2,7 +2,7 @@
 
 ### ERD 
 
-![ERD](./img/1.PNG)
+![ERD](./img/2.PNG)
 
 <br>
 
@@ -37,7 +37,7 @@
 
 <br>
 
-### ChallengeImg
+### ChallengeImg Table
 
 
 |challengeIdx(PK)|challengeUrl|
