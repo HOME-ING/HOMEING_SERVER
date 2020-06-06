@@ -8,7 +8,7 @@ const resMessage = require('../modules/responseMessage');
 /* 
     ✔️ sign in
     METHOD : POST
-    URI : localhost:3000/user/signin
+    URI : /user/signin
     REQUEST BODY : id, password
     RESPONSE STATUS : 200 (OK)
     RESPONSE DATA : User ID
@@ -54,6 +54,27 @@ router.post('/signin', async (req, res) => {
 
 
 });
+
+/* 
+    ✔️ get rank
+    METHOD : GET
+    URI : /user/rank
+    RESPONSE STATUS : 200 (OK)
+    RESPONSE DATA : User 정보
+*/
+
+// 메인화면 - 랭킹 정보
+
+router.get('/rank', async (req, res) => {
+
+    //불러오기
+    const ranks = await Users.getRanks()
+
+    // 불러오기 성공
+    return res.status(statusCode.OK)
+        .send(util.success(statusCode.OK, resMessage.RANK_SUCCESS, ranks));
+});
+
 
 /* 
     ✔️ get profile
