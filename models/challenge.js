@@ -1,22 +1,17 @@
 const pool = require('../modules/pool');
-const postTable = 'Post';
-const postImgTable = 'PostImage';
-const userTable = 'User';
-const detailTable = 'Detail';
+const challengeTable = 'Challenge';
+const challengeImgTable = 'ChallengeImg';
 
 
-const post = {
-    // 포스트 리스트 불러오기
+const challenge = {
+    // 챌린지 리스트 불러오기
     getAllList: async () => {
-        const query = `SELECT postIdx, name, profileImgUrl, location, content FROM ${postTable}
-        INNER JOIN ${userTable} ON Post.User_userIdx = User.userIdx`;
+        const query = `SELECT challengeIdx, title, description From ${challengeTable}`;
         try {
             const result = await pool.queryParam(query);
             for (let element of result) {
                 // 이미지 추가
-                element['postImgs'] = await post.getPostImgs(element['postIdx'])
-                // 상세가구 추가
-                element['details'] = await post.getDetails(element['postIdx'])
+                element['challengeImgs'] = await challenge.getChallengeImgs(element['challengeIdx'])
             }
             return result
 
@@ -30,31 +25,15 @@ const post = {
         }
     },
 
-    // 메인화면 인기사진 리스트 불러오기
-    getPhotoImgs: async () => {
-        const query = `SELECT imgUrl FROM ${postImgTable}`;
-        try {
-            const result = await pool.queryParam(query);
-            return result
-
-        } catch (err) {
-            if (err.errno == 1062) {
-                console.log('getPhotoImgs ERROR : ', err.errno, err.code);
-                return -1;
-            }
-            console.log('getPhotoImgs ERROR : ', err);
-            throw err;
-        }
-    },
-
-    // 메인화면 스토리 리스트 불러오기
-    getStories: async () => {
-        const query = `SELECT name, content, postIdx FROM ${postTable} INNER JOIN ${userTable} ON Post.User_userIdx = User.userIdx`;
+    // 콘텐츠 리스트 불러오기
+    getChallenges_test: async () => {
+        const query = `SELECT * FROM ${challengeTable}`;
         try {
             const result = await pool.queryParam(query);
             // 이미지 추가
             for (let element of result) {
-                element['imgUrl'] = await post.mainPostImg(element['postIdx'])
+                console.log('el', element)
+                element['challengeUrl'] = await challenge.mainChallengeImg(element['challengeIdx'])
             }
             return result
 
@@ -68,12 +47,13 @@ const post = {
         }
     },
 
-    // 메인화면 스토리 사진 불러오기
-    mainPostImg: async (idx) => {
-        const query = `SELECT imgUrl FROM ${postImgTable} WHERE Post_postIdx="${idx}"`;
+    // 콘텐츠 챌린지 사진 불러오기
+    mainChallengeImg: async (idx) => {
+        const query = `SELECT challengeUrl FROM ${challengeImgTable} WHERE challengeIdx="${idx}"`;
         try {
             const result = await pool.queryParam(query);
-            return result[0].imgUrl
+            console.log(result)
+            return result[0].challengeUrl
 
         } catch (err) {
             if (err.errno == 1062) {
@@ -85,10 +65,9 @@ const post = {
         }
     },
 
-    // 상세 가구 정보 불러오기
-    getDetails: async (idx) => {
-        const query = `SELECT imgUrl, company, price, Detail.content FROM ${postTable}
-        INNER JOIN ${detailTable} ON Post.postIdx = Detail.Post_postIdx WHERE Post.postIdx = "${idx}"`;
+    // 챌린지 이미지 불러오기
+    getChallengeImgs: async (idx) => {
+        const query = `SELECT challengeUrl FROM ${challengeImgTable} WHERE challengeIdx="${idx}"`;
         try {
             const result = await pool.queryParam(query);
             return result
@@ -103,9 +82,10 @@ const post = {
         }
     },
 
-    // 포스트 이미지 불러오기
-    getPostImgs: async (idx) => {
-        const query = `SELECT imgUrl FROM ${postImgTable} WHERE Post_postIdx="${idx}"`;
+    // 콘텐츠 리스트 불러오기
+    getChallenges: async () => {
+        const query = `SELECT challengeUrl, title, description, likes, shared 
+        FROM ${challengeTable} INNER JOIN ${challengeImgTable} ON Challenge.challengeIdx = ChallengeImg.challengeIdx`;
         try {
             const result = await pool.queryParam(query);
             return result
@@ -118,9 +98,8 @@ const post = {
             console.log('getPhotoImgs ERROR : ', err);
             throw err;
         }
-    }
-
+    },
 
 }
 
-module.exports = post;
+module.exports = challenge;
