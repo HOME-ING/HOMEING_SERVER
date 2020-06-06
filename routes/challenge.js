@@ -7,35 +7,24 @@ const resMessage = require('../modules/responseMessage');
 const ChallengeModel = require('../models/challenge');
 
 
-// /* GET 포스트 리스트 불러오기 */
-// router.get('/', async (req, res) => {
-//   // 불러오기
-//   const posts = await PostModel.getAllList();
+/* GET 챌린지 리스트 불러오기 */
+router.get('/', async (req, res) => {
+  // 불러오기
+  const challenges = await ChallengeModel.getAllList();
 
-//   // 불러오기 성공
-//   return res.status(statusCode.OK)
-//     .send(util.success(statusCode.OK, resMessage.ALL_POST_SUCCESS, posts));
-// });
+  // 불러오기 성공
+  return res.status(statusCode.OK)
+    .send(util.success(statusCode.OK, resMessage.ALL_CHALLENGE_SUCCESS, challenges));
+});
 
-// /* GET 메인화면 인기사진 리스트 불러오기 */
-// router.get('/popular', async (req, res) => {
-//   // 불러오기
-//   const photos = await PostModel.getPhotoImgs();
+/* GET 콘텐츠화면 챌린지 불러오기 */
+router.get('/contents', async (req, res) => {
+  // 불러오기
+  const contents = await ChallengeModel.getChallenges();
 
-//   // 불러오기 성공
-//   return res.status(statusCode.OK)
-//     .send(util.success(statusCode.OK, resMessage.POPULAR_PHOTOS_SUCCESS, photos));
-// });
-
-
-// /* GET 메인화면 스토리 리스트 불러오기 */
-// router.get('/story', async (req, res) => {
-//   // 불러오기
-//   const stories = await PostModel.getStories();
-
-//   // 불러오기 성공
-//   return res.status(statusCode.OK)
-//     .send(util.success(statusCode.OK, resMessage.STORY_SUCCESS, stories));
-// });
+  // 불러오기 성공
+  return res.status(statusCode.OK)
+    .send(util.success(statusCode.OK, resMessage.CONTENTS_SUCCESS, contents));
+});
 
 module.exports = router;

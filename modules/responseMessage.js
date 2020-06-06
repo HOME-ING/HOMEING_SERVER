@@ -12,11 +12,8 @@ module.exports = {
     READ_PROFILE_SUCCESS: "프로필 조회 성공",
 
     // 챌린지 관련
-    ALL_POST_SUCCESS: "가구 포스트 불러오기 성공",
-    POPULAR_PHOTOS_SUCCESS: "인기사진 리스트 불러오기 성공",
-    STORY_SUCCESS: "메인화면 스토리 리스트 불러오기 성공",
-    POST_FAIL: "게시글 조회 실패",
-    NO_POST_IDX: "해당 게시글 없음",
+    ALL_CHALLENGE_SUCCESS: "메인화면 챌린지 리스트 불러오기 성공",
+    CONTENTS_SUCCESS: "콘텐츠 불러오기 성공",
 
     // 랭크 관련
     RANK_SUCCESS: "랭크 불러오기 성공",
