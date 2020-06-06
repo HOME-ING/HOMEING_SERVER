@@ -3,6 +3,7 @@ const table = 'User';
 
 const user = {
 
+    // 로그인
     checkUser: async (id) => {
         const query = `SELECT * FROM ${table} WHERE id="${id}"`;
         try {
@@ -42,7 +43,26 @@ const user = {
             console.log('getUser ERROR : ', err);
             throw err;
         }
-    }
+    },
+
+    // 랭크 관련
+    getRanks: async () => {
+        const query = `SELECT ranks, id, profileUrl FROM ${table} ORDER BY ranks`;
+        try {
+            const result = await pool.queryParam(query);
+            return result
+
+        } catch (err) {
+            if (err.errno == 1062) {
+                console.log('getPhotoImgs ERROR : ', err.errno, err.code);
+                return -1;
+            }
+            console.log('getPhotoImgs ERROR : ', err);
+            throw err;
+        }
+    },
+
+
 }
 
 module.exports = user;
