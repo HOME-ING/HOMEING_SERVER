@@ -6,6 +6,12 @@
 
 <br>
 
+### API Wiki
+
+✔ [API Wiki](https://github.com/HOME-ING/HOMEING_SERVER/wiki/%E2%9C%94%EF%B8%8F-%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4-%EC%B1%8C%EB%A6%B0%EC%A7%80-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0)
+
+<br>
+
 ### User Table 
 
 
