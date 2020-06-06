@@ -48,7 +48,7 @@
 
 <br>
 
-### Banner
+### Banner Table
 
 
 |bannerUrl(PK)|
