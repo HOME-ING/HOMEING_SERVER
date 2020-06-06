@@ -7,5 +7,10 @@ router.use('/user', require('./user'));
 // 챌린지 관련
 router.use('/challenge', require('./challenge'));
 
+// 배너관련
+router.use('/banner', require('./banner'));
+
+// 핫밍관련
+router.use('/hotming', require('./hotming'));
 
 module.exports = router;

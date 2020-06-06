@@ -18,5 +18,11 @@ module.exports = {
     POST_FAIL: "게시글 조회 실패",
     NO_POST_IDX: "해당 게시글 없음",
 
+    // 배너 관련
+    ALL_Banner_SUCCESS: "배너 이미지 불러오기 성공",
+
+    // 핫밍 관련
+    ALL_HOTMING_SUCCESS: "핫밍 이미지 불러오기 성공",
+
     DB_ERROR: "DB 오류"
 };
