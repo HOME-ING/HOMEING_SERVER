@@ -23,8 +23,7 @@ const user = {
 
         try {
             const user = await pool.queryParam(query);
-            const hashed = crypto.pbkdf2Sync(password, user[0].salt.toString(), 1, 32, 'sha512').toString('hex');
-            return user[0].password === hashed ? true : false
+            return user[0].password === password ? true : false
 
         } catch (err) {
             console.log('signin ERROR : ', err);
