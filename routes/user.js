@@ -1,4 +1,3 @@
-const crypto = require('crypto');
 const express = require('express');
 const router = express.Router();
 const Users = require('../models/user');
@@ -61,10 +60,10 @@ router.post('/signin', async (req, res) => {
     METHOD : GET
     URI : localhost:3000/user/profile/:id
     RESPONSE STATUS : 200 (OK)
-    RESPONSE DATA : User Id, name, email
+    RESPONSE DATA : User 정보
 */
 
-// 프로필 조회
+// 프로필 조회 - 마이페이지 기능 나오면
 
 router.get('/profile/:id', async (req, res) => {
 
